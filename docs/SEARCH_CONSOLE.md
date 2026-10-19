@@ -1,5 +1,10 @@
 # Search Console Ownership Checklist
 
+The custom domain is live over HTTPS. A Google site-verification TXT record was
+already present at the apex during DNS inspection; it was not modified. Its
+presence does not establish that the intended Google account owns the property.
+Confirm ownership in Search Console before proceeding with the separate OAuth review.
+
 - [ ] Sign in using the Google identity that manages the OAuth project.
 - [ ] Check for an existing verified Domain property for `grantablehq.com`.
 - [ ] If needed, add a Domain property and copy Google's exact DNS TXT verification record.

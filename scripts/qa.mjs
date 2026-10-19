@@ -15,7 +15,8 @@ try {
       const expectedTitle = route === '/' ? 'HomeCloud Portal' : `${route === '/privacy' ? 'Privacy Policy' : route === '/terms' ? 'Terms of Service' : 'Contact'} | HomeCloud Portal`;
       if (await page.title() !== expectedTitle) throw new Error(`Wrong title: ${route}`);
       if (!await page.locator('meta[name="description"]').getAttribute('content')) throw new Error(`Missing description: ${route}`);
-      if (await page.locator('link[rel="canonical"]').getAttribute('href') !== `https://homecloud.grantablehq.com${route === '/' ? '/' : route}`) throw new Error(`Wrong canonical: ${route}`);
+      const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+      if (!canonical || new URL(canonical).href !== `https://homecloud.grantablehq.com${route === '/' ? '/' : route}`) throw new Error(`Wrong canonical: ${route}`);
       const text = await page.locator('body').innerText();
       if (/REQUIRES OWNER CONFIRMATION|Draft for owner review/.test(text)) throw new Error(`Draft content: ${route}`);
       if (await page.locator('footer a[href="/privacy"]').count() !== 1) throw new Error(`Missing footer privacy link: ${route}`);
