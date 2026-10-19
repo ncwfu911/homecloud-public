@@ -65,6 +65,7 @@ export default function Privacy() {
           Gmail productivity and email analysis are part of the platform
           described capabilities.
         </p>
+        <p>Gmail data is not sent to OpenRouter.</p>
         <Confirm>
           Document which message bodies, attachments, headers, labels,
           sender/recipient details, and timestamps are accessed or stored;
@@ -119,15 +120,15 @@ export default function Privacy() {
           HomeCloud connects to OpenRouter to create personal training plans
           using only the running statistics of its operator. Running information
           used for that feature is sent to an external AI service; this processing
-          does not all stay on the local computer.
+          does not all stay on the local computer. Only the operator&apos;s
+          running data is sent to OpenRouter; Gmail data is not sent there.
         </p>
         <Confirm>
           Identify the models and downstream providers used through OpenRouter,
           the exact running fields sent, and the applicable retention and
-          training settings. Confirm consent and opt-out controls and whether
-          any other integration can transmit Gmail content, summaries, or other
-          Google-derived information. No provider retention or training promise
-          is made here.
+          training settings. Confirm consent and opt-out controls and identify
+          any other external processors. No provider retention or training
+          promise is made here.
         </Confirm>
       </section>
       <section>
@@ -136,6 +137,10 @@ export default function Privacy() {
           The operator currently intends to retain personal data indefinitely;
           there is no planned routine deletion schedule. Local application data
           is not currently backed up.
+        </p>
+        <p>
+          Deletion functionality is currently being developed. It is not yet
+          described as an available feature in this policy.
         </p>
         <p>
           Contact{" "}
@@ -163,12 +168,13 @@ export default function Privacy() {
           of Google API information. Publishing this website does not
           demonstrate compliance.
         </p>
-        <p>HomeCloud does not sell user data.</p>
+        <p>
+          HomeCloud does not sell user data and does not use Google user data
+          for advertising.
+        </p>
         <Confirm>
           Verify and approve the HomeCloud Limited Use disclosure after
           reviewing actual use, transfers, human access, and derived data.
-          Confirm whether any Google user data is used for advertising; the
-          absence of data sales does not establish the absence of advertising use.
         </Confirm>
       </section>
       <section>

@@ -11,7 +11,9 @@ Confirmed by the owner in this conversation on October 19, 2026 (not a code audi
 - Application data is stored locally on the owner's personal computer with no backups.
 - Synchronization runs manually and on a schedule; frequency/pause behavior remain unconfirmed.
 - The owner has no plans to delete personal data; the policy describes indefinite retention.
-- No user data is sold. Advertising use has not yet been explicitly confirmed.
+- No user data is sold. The owner also confirms no Google data is used for advertising.
+- Gmail data does not reach OpenRouter; only the owner's running data is sent there.
+- Deletion functionality is being added; availability, scope, and behavior are not yet confirmed.
 
 These facts are incorporated into the policy. Downstream AI providers, exact
 payloads, Gmail handling, and deletion procedures still require review.
@@ -30,7 +32,7 @@ with an accurate disclosure. Do not merely remove the warning label.
 - [ ] Describe manual/scheduled synchronization, pause controls, and revocation behavior.
 - [ ] Map each data category to its disclosed user-facing purpose.
 - [ ] Identify external AI/other providers, payloads, consent, training, retention, and opt-out.
-- [ ] Confirm or correct the no-sale/no-advertising statement before adding it as a fact.
+- [x] Owner confirmed no data sales and no use of Google data for advertising.
 - [ ] Verify Limited Use compliance for raw and derived Google API data and human access.
 - [ ] Specify retention/deletion for records, indexes, embeddings, logs, backups, and processors.
 - [ ] Confirm deletion request verification and realistic response periods.
