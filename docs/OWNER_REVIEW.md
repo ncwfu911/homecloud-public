@@ -2,6 +2,22 @@
 
 Status: pending. Prepared October 19, 2026. No private server or credentials accessed.
 
+## Owner-confirmed facts
+
+Confirmed by the owner in this conversation on October 19, 2026 (not a code audit):
+
+- HomeCloud connects to OpenRouter for training plans using only the owner's running statistics.
+- OAuth tokens are encrypted; encryption method/key management remain unreviewed.
+- Application data is stored locally on the owner's personal computer with no backups.
+- Synchronization runs manually and on a schedule; frequency/pause behavior remain unconfirmed.
+- The owner has no plans to delete personal data; the policy describes indefinite retention.
+- No user data is sold. Advertising use has not yet been explicitly confirmed.
+
+These facts are incorporated into the policy. Downstream AI providers, exact
+payloads, Gmail handling, and deletion procedures still require review.
+
+## Remaining review
+
 For each item, document evidence and replace the corresponding confirmation text
 with an accurate disclosure. Do not merely remove the warning label.
 

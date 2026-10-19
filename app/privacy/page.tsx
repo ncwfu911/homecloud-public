@@ -75,8 +75,9 @@ export default function Privacy() {
       <section>
         <h2>4. Fitness and workout information</h2>
         <p>
-          HomeCloud is intended to bring together Fitbit and Google Health
-          information for personal running analytics and goals.
+          HomeCloud uses the personal running statistics of its operator for
+          running analytics, goals, and training plans. It is a personal-use
+          application, not a service that collects running records from the public.
         </p>
         <Confirm>
           Identify the actual APIs and permissions in use, including whether
@@ -88,22 +89,26 @@ export default function Privacy() {
       <section>
         <h2>5. Storage and credential protection</h2>
         <p>
-          The HomeCloud application operates on a privately managed server. This
-          public site has no connection to that server.
+          HomeCloud stores its application data locally on the personal computer
+          of its operator. OAuth tokens are encrypted. The operator does not
+          currently back up this local data. This public site has no connection
+          to that computer. External AI processing is described separately below.
         </p>
         <Confirm>
-          Verify storage locations, database and backup protections, authorized
-          administrators, encryption in transit and at rest, and OAuth
-          token/credential encryption and key management. No
-          credential-encryption claim is made until those controls have been
-          verified.
+          Confirm who can access the local records, token encryption key
+          management, and protections for data in transit. Token encryption does
+          not establish that all other stored data is encrypted.
         </Confirm>
       </section>
       <section>
         <h2>6. Synchronization and purpose limitations</h2>
+        <p>
+          HomeCloud synchronizes information both when the operator starts a
+          synchronization manually and through scheduled synchronization.
+        </p>
         <Confirm>
-          Confirm which synchronization is user-initiated or scheduled, its
-          frequency, how to pause it, and what continues in the background.
+          Confirm the schedule, how to pause synchronization, and what continues
+          in the background after access is revoked.
           Document how Google information is limited to the authorized,
           disclosed personal productivity features.
         </Confirm>
@@ -111,18 +116,27 @@ export default function Privacy() {
       <section>
         <h2>7. External services and AI</h2>
         <p>
-          AI-assisted coaching is among the described HomeCloud capabilities. This
-          policy does not claim that all processing stays on the private server.
+          HomeCloud connects to OpenRouter to create personal training plans
+          using only the running statistics of its operator. Running information
+          used for that feature is sent to an external AI service; this processing
+          does not all stay on the local computer.
         </p>
         <Confirm>
-          List every external AI or other processor, the exact data sent
-          (including Google-derived data), consent controls, retention and
-          training policies, and opt-out behavior. Review whether Gmail content,
-          fitness records, summaries, or embeddings leave the server.
+          Identify the models and downstream providers used through OpenRouter,
+          the exact running fields sent, and the applicable retention and
+          training settings. Confirm consent and opt-out controls and whether
+          any other integration can transmit Gmail content, summaries, or other
+          Google-derived information. No provider retention or training promise
+          is made here.
         </Confirm>
       </section>
       <section>
         <h2>8. Retention, deletion, and access requests</h2>
+        <p>
+          The operator currently intends to retain personal data indefinitely;
+          there is no planned routine deletion schedule. Local application data
+          is not currently backed up.
+        </p>
         <p>
           Contact{" "}
           <a href="mailto:sean.collins@gmail.com">sean.collins@gmail.com</a> to
@@ -131,10 +145,11 @@ export default function Privacy() {
           email.
         </p>
         <Confirm>
-          Set accurate retention periods and deletion steps for primary records,
-          local indexes, embeddings, logs, backups, OAuth tokens, and external
-          processors. Confirm request verification and response times. No fixed
-          deletion deadline is promised here.
+          Document how data could be deleted if needed, including primary
+          records, local indexes, embeddings, logs, OAuth tokens, and information
+          processed externally. Indefinite local retention does not describe
+          OpenRouter or downstream provider retention. Confirm request
+          verification and response times. No fixed deletion deadline is promised.
         </Confirm>
       </section>
       <section>
@@ -148,11 +163,12 @@ export default function Privacy() {
           of Google API information. Publishing this website does not
           demonstrate compliance.
         </p>
+        <p>HomeCloud does not sell user data.</p>
         <Confirm>
           Verify and approve the HomeCloud Limited Use disclosure after
           reviewing actual use, transfers, human access, and derived data.
-          Confirm that HomeCloud does not sell Google user data or use it for
-          advertising before publishing those statements as facts.
+          Confirm whether any Google user data is used for advertising; the
+          absence of data sales does not establish the absence of advertising use.
         </Confirm>
       </section>
       <section>
