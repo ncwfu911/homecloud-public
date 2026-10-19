@@ -40,7 +40,9 @@ or confirmation markers are reintroduced. The private app was not accessed or ch
 
 1. Authenticate with `vercel login` using the intended personal account.
 2. Import `ncwfu911/homecloud-public` as a new project named `homecloud-public`.
-3. Choose Next.js, build command `npm run build`, output `out/` (static export).
+3. Use the repository's `vercel.json`: framework preset Other (`null`), build
+   command `npm run build`, output `out/`. The code uses Next.js, but Vercel serves
+   its static export directly rather than packaging a Next.js server.
 4. Review Deployment Protection: the production public pages must allow anonymous access.
 5. Run checks and commit changes to `main`, the production branch.
 6. Deploy with `vercel deploy --prod --yes` if a manual deployment is required.
