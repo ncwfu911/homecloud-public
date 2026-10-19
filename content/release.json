@@ -1,5 +1,5 @@
 {
-  "privacyApproved": false,
-  "approvedOn": null,
-  "note": "Owner must verify the privacy checklist and replace all confirmation markers before production."
+  "privacyApproved": true,
+  "approvedOn": "2026-10-19",
+  "note": "Publication authorized by the owner's Complete and Publish brief using owner-supplied implementation facts. This records publication authorization, not an independent privacy audit or Google verification."
 }

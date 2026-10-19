@@ -29,30 +29,30 @@ The static output is `out/`. All four routes are accessible without authenticati
 
 ## Review status
 
-The privacy policy is a draft. See [owner checklist](docs/OWNER_REVIEW.md).
-Do not submit this draft as a final OAuth privacy policy. All pages are noindex
-until privacy approval is recorded. `scripts/check-release.mjs` blocks Vercel
-production builds while owner approval or policy confirmation markers remain.
-Existing private application behavior has not been inspected or changed.
+The owner authorized publication in the Complete and Publish brief on October 19,
+2026, including the newly implemented running-data deletion controls. The policy
+uses owner-supplied facts; it is not an independent audit or Google approval.
+See [owner review record](docs/OWNER_REVIEW.md) for remaining implementation checks.
+`scripts/check-release.mjs` continues to block production if approval is withdrawn
+or confirmation markers are reintroduced. The private app was not accessed or changed.
 
 ## Vercel deployment
 
 1. Authenticate with `vercel login` using the intended personal account.
 2. Import `ncwfu911/homecloud-public` as a new project named `homecloud-public`.
 3. Choose Next.js, build command `npm run build`, output `out/` (static export).
-4. Use a Preview deployment for review: `vercel` (not `vercel --prod`).
-5. Review Deployment Protection if external reviewers need anonymous access.
-6. Resolve every privacy confirmation, obtain owner approval, and set
-   `privacyApproved: true` and `approvedOn` in `content/release.json`.
-7. Re-run checks, commit the approved policy, and deploy production.
+4. Review Deployment Protection: the production public pages must allow anonymous access.
+5. Run checks and commit changes to `main`, the production branch.
+6. Deploy with `vercel deploy --prod --yes` if a manual deployment is required.
+7. Verify HTTPS and all four routes. Publication authorization is recorded in
+   `content/release.json`; update it if policy approval changes.
 
 No environment variables or paid integrations are required. Static hosting fits
 the site's technical requirements on the free tier; account eligibility/usage
 remain subject to Vercel's plan terms. Do not upgrade plans for this site.
 
-If Git integration attempts an initial production deployment before approval,
-the intentional build guard will stop it. Use a non-production branch/CLI Preview
-until the content has been approved.
+Production builds use `npm run build` via `vercel.json`, ensuring the release guard
+also runs on Vercel. No OAuth credentials are required for this public site.
 
 ## Connect the custom domain
 

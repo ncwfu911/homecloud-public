@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Mail } from "lucide-react";
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Sean Collins about HomeCloud Portal, privacy, disconnection, or deletion requests.",
+  alternates: { canonical: "/contact" },
+};
 export default function Contact() {
   return (
     <main id="main" className="contact-page container">

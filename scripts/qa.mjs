@@ -12,8 +12,16 @@ try {
       const response = await page.goto(`${base}${route}`);
       if (response.status() !== 200) throw new Error(`${route} returned ${response.status()}`);
       if (await page.locator('h1').count() !== 1) throw new Error(`Missing unique h1: ${route}`);
+      const expectedTitle = route === '/' ? 'HomeCloud Portal' : `${route === '/privacy' ? 'Privacy Policy' : route === '/terms' ? 'Terms of Service' : 'Contact'} | HomeCloud Portal`;
+      if (await page.title() !== expectedTitle) throw new Error(`Wrong title: ${route}`);
+      if (!await page.locator('meta[name="description"]').getAttribute('content')) throw new Error(`Missing description: ${route}`);
+      if (await page.locator('link[rel="canonical"]').getAttribute('href') !== `https://homecloud.grantablehq.com${route === '/' ? '/' : route}`) throw new Error(`Wrong canonical: ${route}`);
+      const text = await page.locator('body').innerText();
+      if (/REQUIRES OWNER CONFIRMATION|Draft for owner review/.test(text)) throw new Error(`Draft content: ${route}`);
+      if (await page.locator('footer a[href="/privacy"]').count() !== 1) throw new Error(`Missing footer privacy link: ${route}`);
       if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) throw new Error(`Overflow: ${width} ${route}`);
       const links = await page.locator('a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
+      if (links.some(link => /\.ts\.net|tailscale|https?:\/\/(?:100\.|192\.168\.|10\.|localhost)/i.test(link || ''))) throw new Error(`Private application link: ${route}`);
       for (const link of links.filter(link => link?.startsWith('/') && !link.startsWith('//'))) {
         const result = await page.request.get(`${base}${link}`);
         if (!result.ok()) throw new Error(`Broken link: ${link}`);

@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Terms of Service" };
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "Informational terms for the privately operated HomeCloud Portal application.",
+  alternates: { canonical: "/terms" },
+};
 export default function Terms() {
   return (
     <main id="main" className="document container">
@@ -23,8 +28,8 @@ export default function Terms() {
         <p>
           The private application is intended for authorized personal
           productivity, file management, analytics, and automation. Use of
-          connected services remains subject to their terms and the
-          permissions granted by the account owner.
+          connected services remains subject to their terms and the permissions
+          granted by the account owner.
         </p>
       </section>
       <section>
@@ -48,9 +53,9 @@ export default function Terms() {
         <h2>Privacy and third-party services</h2>
         <p>
           Read the <Link href="/privacy">Privacy Policy</Link> for the current
-          data-handling disclosures and any details awaiting owner confirmation.
-          This website does not authorize Google access or change permissions on
-          connected accounts.
+          data-handling disclosures, external AI processing, and deletion
+          controls. This website does not authorize Google access or change
+          permissions on connected accounts.
         </p>
       </section>
       <section>

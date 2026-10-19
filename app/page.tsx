@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   ArrowRight,
   FolderOpen,
@@ -8,6 +9,8 @@ import {
   Workflow,
   LockKeyhole,
 } from "lucide-react";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const features = [
   {
@@ -39,6 +42,12 @@ const features = [
     number: "05",
     title: "Tools that fit your day",
     text: "Personal automation and custom applications for the way you organize and use information.",
+  },
+  {
+    icon: FolderOpen,
+    number: "06",
+    title: "Files that connect your tools",
+    text: "Google Drive integration for development automation and exchanging files.",
   },
 ];
 
@@ -125,8 +134,9 @@ export default function Home() {
               </strong>
             </p>
             <p>
-              For details about authorization, data handling, and the
-              information still under owner review, read the privacy policy.
+              Read the privacy policy for details about authorization, external
+              AI processing, and controls for disconnecting or deleting running
+              data.
             </p>
             <Link className="text-link" href="/privacy">
               Read the Privacy Policy <ArrowRight size={17} />
